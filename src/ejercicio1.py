@@ -11,5 +11,10 @@ def convierte_binario_a_decimal(binario: str) -> int:
     Devuelve:
     int: El número decimal correspondiente.
     """
-    # TODO: Borra este comentario y la instrucción pass, e implementa la función
-    pass
+    res = 0
+    pos = 0
+    for i in binario[::-1]: #para que mire la cadena de derecha a izquierda
+        if i == '1':
+            res += 2 ** pos
+        pos += 1
+    return res

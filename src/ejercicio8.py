@@ -20,5 +20,11 @@ def categoria_mayor_gasto(productos: list[Producto]) -> tuple[str, float] | None
     Devuelve:
     tuple[str, float] | None: La categoría con el mayor gasto total y el gasto total, o None si la lista de productos está vacía.
     """
-    # TODO: Borra este comentario y la instrucción pass, e implementa la función
-    pass
+    precios = []
+    if not productos:
+        return None
+    for i in productos.items():
+        i = productos.precio
+        precios.append(i)
+    res = max(precios)
+    return 

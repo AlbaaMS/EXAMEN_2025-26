@@ -193,4 +193,4 @@ def test_categoria_mayor_gasto():
 #test_es_matriz_identidad()
 #test_actualiza_stock()
 #test_calcula_precio_total_ultimos_dias()
-#test_categoria_mayor_gasto()
+test_categoria_mayor_gasto()

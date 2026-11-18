@@ -14,5 +14,20 @@ def actualiza_stock(ventas: list[tuple[str, int]], stock: dict[str, int]) -> lis
     Devuelve:
     list[tuple[str, int]]: Lista de tuplas con los nombres de los productos y las cantidades no vendidas por falta de stock.
     """
-    # TODO: Borra este comentario y la instrucción pass, e implementa la función
-    pass
+    excesos = []
+    for i in ventas:
+        if i[0] in stock:
+            cantidad_prod = stock[i[0]]
+            if i[1]> cantidad_prod:
+                cantidad_exceso = i[1] - cantidad_prod
+                excesos.append((i[0], cantidad_exceso))
+                cantidad_prod = 0
+                stock[i[0]] = cantidad_prod #para que se actualice en el diccionario el valor
+            else:
+                cantidad_prod = cantidad_prod - i[1]
+                stock[i[0]] = cantidad_prod #para que se actualice en el diccionario el valor
+        else:
+            excesos.append(((i[0], i[1])))
+            cantidad_prod = 0
+            stock[i[0]] = cantidad_prod #para que se actualice en el diccionario el valor
+    return excesos

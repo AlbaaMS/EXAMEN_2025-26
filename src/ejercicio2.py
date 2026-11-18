@@ -10,5 +10,11 @@ def divide_cadena(texto: str) -> tuple[str, str]:
     tuple[str, str]: Una tupla con dos cadenas, la primera con los caracteres en posiciones pares
                      y la segunda con los caracteres en posiciones impares.
     """
-    # TODO: Borra este comentario y la instrucción pass, e implementa la función
-    pass
+    pares = ""
+    impares = ""
+    for i in range(len(texto)):
+        if i % 2 == 0:
+            pares += texto[i]
+        else:
+            impares += texto[i]
+    return pares, impares
