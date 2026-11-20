@@ -22,5 +22,10 @@ def calcula_precio_total_ultimos_dias(productos: list[Producto], dias: int, fech
     Devuelve:
     float: El precio total de los productos comprados en los últimos 'dias' días.
     """
-    # TODO: Borra este comentario y la instrucción pass, e implementa la función
-    pass
+    fecha_2 = fecha_actual - timedelta(days = dias)
+    res = 0.0
+
+    for p in productos:
+        if fecha_2 <= p.fecha_compra <= fecha_actual:
+            res += p.precio
+    return res

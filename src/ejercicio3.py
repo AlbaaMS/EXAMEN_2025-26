@@ -10,5 +10,21 @@ def mayor_area(alturas: list[int]) -> int:
     Devuelve:
     int: La mayor área posible entre dos paredes.
     '''
-    # TODO: Borra este comentario y la instrucción pass, e implementa la función
-    pass
+    max_area = 0 
+    p = 0
+    j = len(alturas) -1
+    
+    while p < j:
+        area=  min(alturas[p],alturas[j]) * (j-p)
+
+        if area > max_area:
+            max_area = area
+            
+        if alturas[p] < alturas[j]:
+            p += 1
+        else:
+            j-= 1
+
+    return max_area
+
+               
